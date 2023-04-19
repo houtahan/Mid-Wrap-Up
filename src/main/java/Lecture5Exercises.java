@@ -27,7 +27,28 @@ public class Lecture5Exercises {
      *   lecture 5 page 14
      */
     public String strongPassword(int len) throws Exception {
-
+        int left = 65;
+        int right = 122;
+        int left1 = 48;
+        int right1 = 57;
+        int left2 = 33;
+        int right2 = 47;
+        Random random = new Random();
+        StringBuilder stringBuilder = new StringBuilder(len);
+        for (int i = 0 ; i < len-2 ; i++){
+            int result = left + (int) (random.nextFloat() * (right-left+1));
+            stringBuilder.append((char) result);
+        }
+        for (int i = 0 ; i <= 0 ; i++){
+            int result1 = left1 + (int) (random.nextFloat() * (right1-left1+1));
+            stringBuilder.append((char) result1);
+        }
+        for (int i = 0 ; i <= 0 ; i++){
+            int result2 = left2 + (int) (random.nextFloat() * (right2-left2+1));
+            stringBuilder.append((char) result2);
+        }
+        String resultInString = stringBuilder.toString();
+        return resultInString;
     }
 
     /*
