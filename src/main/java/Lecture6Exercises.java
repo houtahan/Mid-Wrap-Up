@@ -57,7 +57,7 @@ public class Lecture6Exercises {
 
     /*
      *   implement a function that return a list of prime factor of integer n
-     *   in ascending order
+     *   in ascending orders
      *   lecture 6 page 30
      */
     public List<Integer> primeFactors(int n) {
