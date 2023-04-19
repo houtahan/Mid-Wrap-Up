@@ -27,15 +27,7 @@ public class Lecture5Exercises {
      *   lecture 5 page 14
      */
     public String strongPassword(int len) throws Exception {
-        String chars = "abcdefghijklmnopqrstuvwxyz123456789!#$%^&*()_+-";
-        SecureRandom secureRandom = new SecureRandom();
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0 ; i < len ; i++){
-            int length = chars.length();
-            int rand = secureRandom.nextInt(chars.length());
-            stringBuilder.append(chars.charAt(rand));
-        }
-        return stringBuilder.toString();
+
     }
 
     /*

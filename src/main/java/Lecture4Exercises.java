@@ -18,7 +18,7 @@ public class Lecture4Exercises {
      *   lecture 4 page 19
      */
     public long fibonacci(int n) {
-        int first = 1, second = 1, temp;
+        long first = 1, second = 1, temp;
         if (n == 1)
             return first;
         if (n == 2)
