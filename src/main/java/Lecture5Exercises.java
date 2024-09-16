@@ -13,8 +13,8 @@ public class Lecture5Exercises {
         int right = 122;
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder(length);
-        for (int i = 0 ; i < length ; i++){
-            int result = left + (int) (random.nextFloat() * (right-left+1));
+        for (int i = 0; i < length; i++) {
+            int result = left + (int) (random.nextFloat() * (right - left + 1));
             stringBuilder.append((char) result);
         }
         String resultInString = stringBuilder.toString();
@@ -27,15 +27,31 @@ public class Lecture5Exercises {
      *   lecture 5 page 14
      */
     public String strongPassword(int len) throws Exception {
-        String chars = "abcdefghijklmnopqrstuvwxyz123456789!#$%^&*()_+-";
-        SecureRandom secureRandom = new SecureRandom();
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0 ; i < len ; i++){
-            int length = chars.length();
-            int rand = secureRandom.nextInt(chars.length());
-            stringBuilder.append(chars.charAt(rand));
+        if (len < 3){
+            throw new Exception("");
         }
-        return stringBuilder.toString();
+        int left = 65;
+        int right = 122;
+        int left1 = 48;
+        int right1 = 57;
+        int left2 = 33;
+        int right2 = 47;
+        Random random = new Random();
+        StringBuilder stringBuilder = new StringBuilder(len);
+        for (int i = 0; i < len - 2; i++) {
+            int result = left + (int) (random.nextFloat() * (right - left + 1));
+            stringBuilder.append((char) result);
+        }
+        for (int i = 0; i <= 0; i++) {
+            int result1 = left1 + (int) (random.nextFloat() * (right1 - left1 + 1));
+            stringBuilder.append((char) result1);
+        }
+        for (int i = 0; i <= 0; i++) {
+            int result2 = left2 + (int) (random.nextFloat() * (right2 - left2 + 1));
+            stringBuilder.append((char) result2);
+        }
+        String resultInString = stringBuilder.toString();
+        return resultInString;
     }
 
     /*
@@ -47,6 +63,19 @@ public class Lecture5Exercises {
      *   lecture 5 page 17
      */
     public boolean isFiboBin(int n) {
-        return true;
+        int first = 0;
+        int sec = 1;
+        while (sec < n+1) {
+            int third = first + sec;
+            if (n - sec == Integer.bitCount(third)) {
+                return true;
+            }
+            else {
+                first = sec;
+                sec = third;
+            }
+        }
+        return false;
     }
+
 }
